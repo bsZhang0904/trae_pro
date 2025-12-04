@@ -1,0 +1,282 @@
+/* Home页面样式 - 为老年人优化 */
+.home-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* 问候区域 */
+.greeting-section {
+  background: linear-gradient(135deg, #4a90e2, #6a5acd);
+  color: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.greeting-text {
+  font-size: var(--font-size-xxl);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.date-text {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xs);
+  opacity: 0.9;
+}
+
+.time-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: var(--spacing-md);
+}
+
+/* 标题样式 */
+.section-title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-color);
+  border-left: 4px solid var(--primary-color);
+  padding-left: var(--spacing-md);
+}
+
+/* 服务卡片样式 */
+.quick-services {
+  margin-bottom: var(--spacing-xl);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.service-card {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-lg);
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  border-top: 6px solid var(--primary-color);
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.service-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.service-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.service-description {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* 今日概览区域 */
+.today-overview {
+  margin-bottom: var(--spacing-xl);
+}
+
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.overview-card {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-lg);
+  transition: transform 0.3s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-3px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.card-header h3 {
+  font-size: var(--font-size-lg);
+  color: var(--text-color);
+}
+
+.card-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* 天气卡片 */
+.weather-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.weather-temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.weather-desc {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+}
+
+/* 健康卡片 */
+.health-info {
+  margin-bottom: var(--spacing-md);
+}
+
+.health-info p {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-md);
+  color: var(--text-color);
+}
+
+.sign-in-button {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-md);
+}
+
+/* 新闻卡片 */
+.news-info {
+  margin-bottom: var(--spacing-md);
+}
+
+.news-title {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.5;
+}
+
+.news-source {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.card-link {
+  display: inline-block;
+  font-size: var(--font-size-md);
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-top: var(--spacing-sm);
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* 温馨提示区域 */
+.tips-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.tips-content {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.tip-text {
+  font-size: var(--font-size-md);
+  color: #856404;
+  line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .greeting-section {
+    padding: var(--spacing-lg);
+  }
+  
+  .greeting-text {
+    font-size: var(--font-size-xl);
+  }
+  
+  .time-text {
+    font-size: 2rem;
+  }
+  
+  .services-grid,
+  .overview-cards {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .service-card {
+    min-height: 200px;
+    padding: var(--spacing-md);
+  }
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .weather-temp {
+    font-size: 2rem;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .service-card:active {
+    transform: scale(0.98);
+  }
+  
+  .overview-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  .service-card {
+    border-width: 3px;
+  }
+  
+  .section-title {
+    border-width: 6px;
+  }
+}

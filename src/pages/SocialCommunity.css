@@ -1,0 +1,554 @@
+/* 社交社区页面样式 - 为老年人优化设计 */
+
+/* 基础样式设置 */
+.social-community {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* 页面标题 */
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* 选项卡样式 */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+}
+
+.tab.active {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.tab:hover:not(.active) {
+  background-color: #f0f0f0;
+}
+
+/* 发布框样式 */
+.post-creator {
+  display: flex;
+  gap: 15px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.post-input-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.post-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+
+.post-textarea:focus {
+  border-color: #4a90e2;
+}
+
+.post-button {
+  align-self: flex-end;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.post-button:hover:not(:disabled) {
+  background-color: #357abd;
+  transform: translateY(-2px);
+}
+
+.post-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 动态列表样式 */
+.posts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.post {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.post:hover {
+  transform: translateY(-3px);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.post-time {
+  font-size: 16px;
+  color: #666;
+}
+
+.post-content {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.post-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.post-images img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* 操作按钮样式 */
+.post-actions {
+  display: flex;
+  gap: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  background: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #666;
+}
+
+.action-button:hover {
+  background-color: #f0f0f0;
+}
+
+.action-button.liked {
+  color: #e74c3c;
+}
+
+/* 评论区域样式 */
+.comments-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.comment {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-author {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.comment-time {
+  font-size: 14px;
+  color: #999;
+}
+
+.comment-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* 评论输入样式 */
+.comment-input-container {
+  display: flex;
+  gap: 10px;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.comment-input:focus {
+  border-color: #4a90e2;
+}
+
+.comment-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.comment-button:hover:not(:disabled) {
+  background-color: #357abd;
+}
+
+.comment-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 推荐好友样式 */
+.friends-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.friend-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.friend-card:hover {
+  transform: translateY(-3px);
+}
+
+.friend-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.friend-info {
+  flex: 1;
+}
+
+.friend-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.friend-age {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.friend-interests {
+  font-size: 16px;
+  color: #666;
+}
+
+.add-friend-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.add-friend-button:hover {
+  background-color: #219a52;
+  transform: translateY(-2px);
+}
+
+/* 兴趣小组样式 */
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.group-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.group-card:hover {
+  transform: translateY(-3px);
+}
+
+.group-icon {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.group-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.group-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 15px;
+  min-height: 60px;
+}
+
+.group-members {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+.join-group-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.join-group-button:hover {
+  background-color: #d35400;
+  transform: translateY(-2px);
+}
+
+/* 加载和空状态 */
+.loading, .no-content {
+  text-align: center;
+  padding: 50px;
+  font-size: 20px;
+  color: #666;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .social-community {
+    padding: 15px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .tabs {
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+  }
+  
+  .tab {
+    padding: 12px;
+    font-size: 18px;
+  }
+  
+  .post-creator {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .avatar-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 26px;
+  }
+  
+  .post-content {
+    font-size: 16px;
+  }
+  
+  .groups-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .friend-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .friend-info {
+    order: -1;
+  }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  .social-community {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .post, .friend-card, .group-card, .post-creator {
+    border: 2px solid #000;
+  }
+  
+  .tab {
+    border: 1px solid #000;
+  }
+  
+  .tab.active {
+    border-color: #000;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .action-button, .tab, .post-button, .comment-button, .add-friend-button, .join-group-button {
+    padding: 14px 20px;
+    font-size: 20px;
+    touch-action: manipulation;
+  }
+  
+  .avatar-circle, .friend-avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+  }
+}
