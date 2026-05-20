@@ -1,0 +1,750 @@
+.health-container {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.health-header {
+  margin-bottom: 40px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.page-title {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* 通用卡片样式 */
+.card {
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  margin-bottom: 35px;
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin: 0 0 25px 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.section-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+/* 加载状态 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.loading-text {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* 签到区域 */
+.sign-in-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: none;
+}
+
+.sign-in-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+  border-bottom: 3px solid #dee2e6;
+}
+
+.sign-in-left {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.sign-in-date {
+  font-size: 1.5rem;
+  color: #495057;
+  margin: 12px 0 15px;
+  font-weight: 500;
+}
+
+.consecutive-days {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin: 15px 0 0;
+  font-weight: 500;
+}
+
+.days-count {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #2e7d32;
+  display: inline-block;
+  padding: 0 10px;
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  color: white;
+  border-radius: 10px;
+  margin: 0 5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.sign-in-button {
+  font-size: 1.6rem;
+  padding: 22px 40px;
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-height: 80px;
+  min-width: 200px;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.sign-in-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #43a047 0%, #5cb860 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.sign-in-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sign-in-button.signed-in {
+  background-color: #9E9E9E;
+  cursor: default;
+}
+
+.sign-in-button:disabled {
+  opacity: 0.8;
+}
+
+/* 签到日历 */
+.sign-in-calendar {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+}
+
+.calendar-title {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #495057;
+  padding: 12px 0;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-day {
+  text-align: center;
+  padding: 18px 12px;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 2px solid #e9ecef;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.calendar-day:hover {
+  transform: scale(1.05);
+  border-color: #adb5bd;
+}
+
+.calendar-day.empty {
+  background-color: transparent;
+  border: none;
+}
+
+.calendar-day.today {
+  background-color: #E3F2FD;
+  border-color: #42A5F5;
+  font-weight: bold;
+}
+
+.calendar-day.signed-in {
+  background-color: #E8F5E9;
+  border-color: #4CAF50;
+  color: #2E7D32;
+}
+
+.day-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.day-number {
+  font-size: 1.3rem;
+}
+
+.sign-mark {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 1.1rem;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* 健康数据区域 */
+.health-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 15px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.stat-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-size: 2.5rem;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.stat-icon.health-rate {
+  background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+}
+
+.stat-icon.steps {
+  background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+}
+
+.stat-icon.sleep {
+  background: linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%);
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-title {
+  font-size: 1.4rem;
+  color: #6c757d;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* 进度条 */
+.health-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 10px 0;
+}
+
+.progress-item {
+  margin-bottom: 0;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 30px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2196f3 0%, #64b5f6 100%);
+  transition: width 0.5s ease;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  animation: shimmer 2s infinite;
+}
+
+.progress-fill.water {
+  background: linear-gradient(90deg, #4caf50 0%, #81c784 100%);
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* 健康建议区域 */
+.suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.suggestion-item {
+  padding: 25px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 15px;
+  border-left: 6px solid #2196f3;
+  border-right: 1px solid #e9ecef;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.suggestion-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.suggestion-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.suggestion-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 18px;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.suggestion-title {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 700;
+}
+
+.suggestion-content {
+  font-size: 1.3rem;
+  color: #495057;
+  margin: 0 0 12px 0;
+  line-height: 1.7;
+  padding-left: 63px;
+}
+
+.suggestion-tip {
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin: 0;
+  font-style: italic;
+  padding-left: 63px;
+  border-top: 1px solid #e9ecef;
+  padding-top: 10px;
+}
+
+/* 健康提醒区域 */
+.reminders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reminder-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #fff8e1 100%);
+  border-radius: 15px;
+  border-left: 6px solid #ff9800;
+  border-right: 1px solid #ffe0b2;
+  border-top: 1px solid #ffe0b2;
+  border-bottom: 1px solid #ffe0b2;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.reminder-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.reminder-time {
+  width: 120px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e65100;
+  background-color: rgba(255, 152, 0, 0.1);
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.reminder-content {
+  flex: 1;
+  font-size: 1.3rem;
+  color: #495057;
+  padding: 0 25px;
+  font-weight: 500;
+}
+
+.reminder-status {
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.reminder-status[data-status="completed"] {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+}
+
+.reminder-status[data-status="pending"] {
+  color: #ef6c00;
+  background-color: #fff8e1;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.2);
+}
+
+/* Toast提示 */
+.toast {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 18px 35px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  z-index: 1000;
+  animation: slide-up 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  min-width: 280px;
+  text-align: center;
+}
+
+.toast.success {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+}
+
+.toast.error {
+  background: linear-gradient(135deg, #f44336 0%, #ef5350 100%);
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .health-container {
+    padding: 20px 15px;
+  }
+  
+  .page-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+    padding-bottom: 12px;
+  }
+  
+  .card {
+    padding: 25px 20px;
+    margin-bottom: 25px;
+  }
+  
+  .sign-in-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    padding-bottom: 20px;
+  }
+  
+  .sign-in-left {
+    padding-right: 0;
+  }
+  
+  .sign-in-button {
+    width: 100%;
+    max-width: 300px;
+    min-height: 70px;
+  }
+  
+  .health-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .stat-card {
+    padding: 20px;
+  }
+  
+  .calendar-day {
+    padding: 12px 8px;
+    font-size: 1.1rem;
+    min-height: 60px;
+  }
+  
+  .calendar-weekdays {
+    gap: 6px;
+  }
+  
+  .calendar-grid {
+    gap: 6px;
+  }
+  
+  .reminder-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .reminder-time {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .reminder-content {
+    padding: 0;
+  }
+  
+  .suggestion-content,
+  .suggestion-tip {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .suggestion-item {
+    padding: 20px 15px;
+  }
+  
+  .suggestion-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .suggestion-icon {
+    margin-right: 0;
+  }
+  
+  .reminder-item {
+    padding: 15px;
+  }
+  
+  .reminder-content {
+    font-size: 1.2rem;
+  }
+  
+  .reminder-status {
+    align-self: flex-end;
+    padding: 6px 15px;
+    font-size: 1.2rem;
+  }
+  
+  .toast {
+    width: 90%;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    bottom: 40px;
+  }
+  
+  .days-count {
+    font-size: 2rem;
+    display: block;
+    margin: 10px auto;
+    width: fit-content;
+  }
+  
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .stat-value {
+    font-size: 1.8rem;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .sign-in-button {
+    min-height: 76px;
+    min-width: 190px;
+    font-size: 1.7rem;
+  }
+  
+  .stat-icon {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .calendar-day,
+  .weekday {
+    min-height: 75px;
+    font-size: 1.4rem;
+  }
+  
+  .reminder-time,
+  .reminder-status {
+    padding: 10px 20px;
+    font-size: 1.4rem;
+  }
+  
+  .suggestion-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .suggestion-item {
+    border-left: 5px solid #000;
+  }
+  
+  .reminder-item {
+    border-left: 5px solid #000;
+  }
+}
+
+/* 减少动画设置 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

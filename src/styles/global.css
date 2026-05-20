@@ -1,0 +1,140 @@
+/* 全局样式 - 为老年人优化 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 颜色变量 */
+  --primary-color: #4a90e2;
+  --secondary-color: #f5a623;
+  --success-color: #7ed321;
+  --danger-color: #d0021b;
+  --background-color: #f9f9f9;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  
+  /* 字体大小 - 为老年人设计较大的字体 */
+  --font-size-xs: 14px;
+  --font-size-sm: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 28px;
+  
+  /* 间距 */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* 圆角 */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 按钮样式 - 大按钮，易于点击 */
+button {
+  padding: 12px 24px;
+  font-size: var(--font-size-md);
+  border-radius: var(--border-radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: #3a7bc8;
+}
+
+.secondary-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.secondary-button:hover {
+  background-color: #e6951a;
+}
+
+/* 输入框样式 - 大尺寸，易于输入 */
+input, textarea {
+  padding: 12px;
+  font-size: var(--font-size-md);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* 链接样式 */
+a {
+  color: var(--primary-color);
+  font-size: var(--font-size-md);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 适配移动设备 */
+@media (max-width: 768px) {
+  :root {
+    --font-size-sm: 18px;
+    --font-size-md: 20px;
+    --font-size-lg: 24px;
+    --font-size-xl: 28px;
+    --font-size-xxl: 32px;
+  }
+  
+  button {
+    padding: 16px 28px;
+  }
+  
+  .card {
+    padding: var(--spacing-md);
+  }
+}
+
+/* 提高可访问性 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
